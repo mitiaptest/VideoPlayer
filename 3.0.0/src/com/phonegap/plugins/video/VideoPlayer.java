@@ -62,7 +62,7 @@ public class VideoPlayer extends CordovaPlugin {
 	        url = con.getURL().toString();
 			is.close();
 		}
-        
+
         // Create URI
         Uri uri = Uri.parse(url);
 
@@ -101,7 +101,7 @@ public class VideoPlayer extends CordovaPlugin {
             intent.setDataAndType(uri, "video/*");
         }
 
-        this.cordova.getActivity().startActivity(intent);
+        startActivity(intent);
     }
 
     private void copy(String fileFrom, String fileTo) throws IOException {
@@ -119,7 +119,7 @@ public class VideoPlayer extends CordovaPlugin {
         in.close();
         out.close();
     }
-    
+
     private boolean isYouTubeInstalled() {
         PackageManager pm = this.cordova.getActivity().getPackageManager();
         try {
