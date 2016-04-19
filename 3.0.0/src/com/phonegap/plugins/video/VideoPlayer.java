@@ -101,7 +101,7 @@ public class VideoPlayer extends CordovaPlugin {
             intent.setDataAndType(uri, "video/*");
         }
 
-        startActivity(intent);
+        this.cordova.startActivity(intent);
     }
 
     private void copy(String fileFrom, String fileTo) throws IOException {
